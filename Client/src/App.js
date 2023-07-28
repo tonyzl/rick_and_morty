@@ -66,7 +66,7 @@ function App() {
       const backRequest = await axios(
         `http://localhost:3001/character/${dato}`
       );
-      if (backRequest.data.name) {
+      if (backRequest.data.name && !characters.find((char) => char.id === backRequest.data.id)) {
         seterrorApi(false);
         setCharacters((oldChars) => [...oldChars, backRequest.data]);
       } else {
@@ -113,9 +113,9 @@ function App() {
           path="/dashboard/:idUser"
           element={
             <Profile
-              name={"Messi"}
-              username={"leo36"}
-              email={"leo@messi.com"}
+              name={"AZL"}
+              username={"azl"}
+              email={"https://github.com/tonyzl"}
             />
           }
         />
