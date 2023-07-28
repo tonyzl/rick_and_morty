@@ -56,24 +56,29 @@ export default function Card({
 
   return (
     <div className={style.cardContainer}>
+
+      {isFav ? (
+        <button className={style.favButton} onClick={handleClick}>❤️</button>
+      ) : (
+        <button className={style.favButton} onClick={handleClick}>🤍</button>
+      )}
+
+
+
+      <h2 className={style.cardInfo}>{name}</h2>
+
+      <Link to={`/detail/${id}`}>
+        <img className={style.cardImage} src={image} alt={name} />
+      </Link>
+
+
       {onClose ? (
         <button className={style.closeButton} onClick={() => onClose(id)}>
           X
         </button>
       ) : null}
-      <h2 className={style.cardInfo}>{name}</h2>
-      <h2 className={style.cardInfo}>{species}</h2>
-      <h2 className={style.cardInfo}>{gender}</h2>
-      <h2 className={style.cardInfo}>{status}</h2>
-      <h2 className={style.cardInfo}>{origin}</h2>
-      <Link to={`/detail/${id}`}>
-        <img className={style.cardImage} src={image} alt={name} />
-      </Link>
-      {isFav ? (
-        <button onClick={handleClick}>❤️</button>
-      ) : (
-        <button onClick={handleClick}>🤍</button>
-      )}
+
+
     </div>
   );
 }

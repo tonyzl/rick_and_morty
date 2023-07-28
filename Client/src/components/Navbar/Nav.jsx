@@ -7,7 +7,7 @@ export default function Nav(props) {
   return (
     <div className={style.container}>
       <Link to="/home">HOME</Link>
-      <Link to="/favorites">FAVS ❤️</Link>
+      <Link to="/favorites">FAVORITES</Link>
       {/* <Link to="/create">ADD CHARACTER!</Link> */}
       <SearchBar onSearch={props.onSearch} />
       <Link to="/about">ABOUT</Link>
